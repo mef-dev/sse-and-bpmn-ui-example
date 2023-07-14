@@ -1,0 +1,41 @@
+<mefdev-central-page>
+
+    <mefdev-central-page-row>
+      <div class="col-auto m-b-30">
+        <span class="h1">Reset network state</span>
+      </div>
+    </mefdev-central-page-row>
+
+    <mefdev-central-page-row>
+      <div class="col-auto">
+        <button 
+        type="button" 
+        class="btn btn-success"
+        style="height: 145px;"
+        (click)="onReset()">        
+            <span class="h1">{{'RESET' | translate}}</span>
+        </button>
+      </div>
+    </mefdev-central-page-row>
+    
+    <mefdev-central-page-row>
+        <div class="col-auto stage-list m-t-30">
+            <div
+             *ngFor="let stage of stages; let i = index"
+             class="stage-card"
+            >
+                <div class="label"> 
+                    <span class="body-3">{{stage.label}}</span>
+                </div>
+                <div class="status"> 
+                    <span
+                    [ngStyle]="{'color': stage.statusColor}"
+                    class="body-4"
+                    >{{stage.status}}</span>
+                </div>
+       
+            </div>
+        </div>
+    </mefdev-central-page-row>
+
+</mefdev-central-page>

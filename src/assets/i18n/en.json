@@ -1,0 +1,7 @@
+{
+    "test": "test",
+    "platform-data": "Platform data",
+    "platform-api": "Platform api",
+    "plugin-api": "Plugin api",
+    "plugin-info": "Plugin info"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "server-side-ui-example",
+  "version": "1.0.4",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "generate-version-file": "npm explore @natec/mef-dev-platform-connector -- npm run generate-version-file",
+    "build:plugin": "npm run generate-version-file && ng build --configuration production --output-hashing none --single-bundle",
+    "build:plugin:watch": "ng build --output-hashing none --single-bundle --watch --optimization=false --output-path C:/storage/front/Plugins/test/server-side-ui-example/1.0.0"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.2.9",
+    "@angular/common": "^15.2.9",
+    "@angular/compiler": "^15.2.9",
+    "@angular/core": "^15.2.9",
+    "@angular/forms": "^15.2.9",
+    "@angular/platform-browser": "^15.2.9",
+    "@angular/platform-browser-dynamic": "^15.2.9",
+    "@angular/router": "^15.2.9",
+    "@natec/mef-dev-platform-connector": "^15.1.1",
+    "@natec/mef-dev-ui-kit": "^15.1.8",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "bootstrap": "^5.3.0",
+    "font-awesome": "^4.7.0",
+    "ng-event-source": "^1.0.14",
+    "ngx-build-plus": "^15.0.0",
+    "ngx-toastr": "^15.2.2",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.2.8",
+    "@angular/cli": "^15.2.8",
+    "@angular/compiler-cli": "^15.2.9",
+    "@types/jasmine": "~3.10.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~4.0.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.1.0",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.8.4"
+  }
+}

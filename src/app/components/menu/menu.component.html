@@ -1,0 +1,49 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 .b-color-Light-Gray-3" style="width: 100%; min-height: 100%;">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a 
+        class="nav-link"
+        [ngClass]="{'active': isActiveUrl('/home')}"
+        [routerLink]="formatedUrl('/home')"
+        >
+        {{'Home' | translate}}
+        </a>
+      </li>
+      <li>
+        <a 
+        class="nav-link"
+        [ngClass]="{'active': isActiveUrl('/reset-state')}"
+        [routerLink]="formatedUrl('/reset-state')"
+        >
+        {{'Reset state' | translate}}
+        </a>
+      </li>
+      <li>
+        <a
+        class="nav-link"
+        [ngClass]="{'active': isActiveUrl('/optimaze-network')}"
+        [routerLink]="formatedUrl('/optimaze-network')"
+        >
+        {{'Optimaze network' | translate}}
+        </a>
+      </li>
+      <li>
+        <a
+        class="nav-link"
+        [ngClass]="{'active': isActiveUrl('/bpmn-call')}"
+        [routerLink]="formatedUrl('/bpmn-call')"
+        >
+        {{'BPMN Call' | translate}}
+        </a>
+      </li>
+      <li>
+        <a
+        class="nav-link"
+        [ngClass]="{'active': isActiveUrl('/sse-demo')}"
+        [routerLink]="formatedUrl('/sse-demo')"
+        >
+        {{'SSE Demo' | translate}}
+        </a>
+      </li>
+    </ul>
+</div>

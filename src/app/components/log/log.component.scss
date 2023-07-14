@@ -1,0 +1,18 @@
+@import "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/fonts.scss";
+@import 'node_modules/@natec/mef-dev-ui-kit/src/lib/styles/designe-colors.scss';
+
+.logs-container{
+    display: flex;
+}
+
+.logs{
+    width: 400%; // wtf?
+    height: 118px;
+    overflow-y: scroll;
+}
+
+.status{    
+    height: 118px;
+    overflow-y: auto;
+    width: -webkit-fill-available;
+}

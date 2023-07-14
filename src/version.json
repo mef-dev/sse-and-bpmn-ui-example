@@ -1,0 +1,13 @@
+{
+    "dirty": false,
+    "raw": "",
+    "hash": "",
+    "distance": null,
+    "tag": null,
+    "semver": null,
+    "suffix": "",
+    "semverString": null,
+    "name": "server-side-ui-example",
+    "version": "1.0.4",
+    "main": "main.js"
+}

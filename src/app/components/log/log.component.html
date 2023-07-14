@@ -1,0 +1,43 @@
+<div class="logs-container w-100">
+    <div id="logs-data" class="logs">
+        <div *ngFor="let r of logList">
+            <ng-container
+                *ngTemplateOutlet="view; context:{ record: r, showTime: true }"
+            ></ng-container>
+        </div>
+    </div>
+    <div class="status">
+        <div *ngFor="let r of statusList">
+            <ng-container
+                *ngTemplateOutlet="viewStatus; context:{ record: r, showTime: false }"
+            ></ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #view let-r="record" let-showTime="showTime">
+    <div class="border d-flex p-l-5">
+        <span class="body-5 m-0"> 
+            <span *ngIf="showTime">[ {{getTime(r.date)}} ]</span> 
+            {{r.message}} 
+        </span> 
+
+        <span class="d-flex border-right m-l-5">    
+            <app-json-formatter [json]="getJson(r)" ></app-json-formatter>
+        </span>
+    </div>    
+</ng-template>
+
+<ng-template #viewStatus let-r="record" >
+    <div class="border d-flex p-l-5">
+        <span class="body-5 m-0"> 
+            {{r.message}} 
+        </span> 
+
+        <span class="d-flex border-right m-l-5">            
+            <div [ngStyle]="{'color': r?.params?.color ?? 'green'}">
+                {{r.data}}
+            </div>
+        </span>
+    </div>    
+</ng-template>

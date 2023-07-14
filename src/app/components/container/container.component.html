@@ -1,0 +1,29 @@
+<div class="content-container-row">
+    <div class="menu">
+        <div class="head">
+            header 1
+        </div>
+        <div class="data-content">
+            <app-menu></app-menu>
+        </div>  
+    </div>
+    <div class="content-container">
+        <div class="head">
+            {{contentHeader}}
+        </div>
+        <div class="data-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<div class="row content-container-log">
+    <div class="col container-log">
+        <div class="head">
+            Logs
+        </div>
+        <app-log></app-log>
+    </div>
+</div>
+
+

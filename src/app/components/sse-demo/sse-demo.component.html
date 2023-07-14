@@ -1,0 +1,75 @@
+<medev-card-simple class="m-4">
+  <ng-template #card_title> 
+    {{'Send some message' | translate}}
+  </ng-template>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label> {{'Message text' | translate}} </label>
+              <input class="form-control" 
+              [(ngModel)]="sendMessage">
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="form-group">
+              <label>ID</label>
+              <input class="form-control" 
+              [(ngModel)]="serviceID">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-6">
+        <button 
+        type="button" 
+        class="btn btn-success"
+        [disabled]="subscribeStatus == 'inProgress'"
+        (click)="onSend()">        
+          {{'Send new' | translate}}
+        </button>
+      </div>
+  </div>
+</medev-card-simple>
+
+
+<medev-card-simple class="m-4">
+  <ng-template #card_title> 
+      {{'Read some steam' | translate}}
+    </ng-template>
+
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+              <label>ID</label>
+              <input class="form-control" 
+              [(ngModel)]="serviceID">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <button 
+        type="button" 
+        class="btn btn-success"
+        [disabled]="subscribeStatus == 'inProgress'"
+        (click)="onSubscribe()">        
+          {{'Subscribe' | translate}}
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12"
+      *ngFor="let r of records">
+        <div class="border d-flex p-l-5">
+          <span class="body-5 m-0"> 
+              <span>[ {{ getTime(r.date) }} ]</span> 
+              {{r.message}} 
+          </span> 
+  
+          <span class="d-flex border-right m-l-5">    
+              <app-json-formatter [json]="r.data" ></app-json-formatter>
+          </span>
+      </div>    
+    </div>
+  </div>
+</medev-card-simple>

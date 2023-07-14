@@ -1,0 +1,74 @@
+@import "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/fonts.scss";
+@import 'node_modules/@natec/mef-dev-ui-kit/src/lib/styles/designe-colors.scss';
+
+.content-container-row{
+    height: calc(100% - 262px);
+    width: calc(100% - 16px);
+
+    position: fixed;
+    top: 65px;
+    left: 0px;
+
+    margin-left: 5px;
+    margin-right: 18px;
+
+    display: flex;
+}
+
+.menu{
+    width: 20%;
+    min-width: 100px;
+
+    // @media (max-width: 720px) {}    
+    margin-right: 3px;
+    
+    border: solid 2px $Light-Gray-3;
+    border-radius: 8px;
+
+    max-height: -webkit-fill-available;
+}
+
+.content-container{    
+    border: solid 2px $Light-Gray-3;
+    border-radius: 8px;
+    
+    max-height: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+
+.head{
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    @extend .h3;
+    @extend .b-color-Light-Gray-3;
+}
+
+.content-container-log{
+    height: 190px;
+    width: 100%;
+
+    position: fixed;
+    top: calc(100% - 258px + 65px);
+    
+    padding-bottom: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.container-log{
+    border: solid 2px $Light-Gray-3;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.col{
+    padding: 0;
+}
+
+.data-content{
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}

@@ -1,0 +1,16 @@
+.stage-list{
+    width: fit-content;
+    height: fit-content;
+    
+}
+.stage-card{
+    display: inline-grid;
+    justify-items: center;
+    width: 320px;
+    height: 150px;
+    margin: 15px;
+}
+
+.label{
+    background: transparent;
+}
