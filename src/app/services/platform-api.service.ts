@@ -22,7 +22,10 @@ export class PlatformApiService {
   getSseEvent(serviceId: number): EventSourcePolyfill{
      return new EventSourcePolyfill(
       `${PluginEndpoints.eventSource}?serviceId=${serviceId}`,
-      { headers: { 'Authorization': this.GetAuthorization() } }
+      { 
+        headers: { 'Authorization': this.GetAuthorization() }, 
+        heartbeatTimeout: 0
+      }
     )
   }
 

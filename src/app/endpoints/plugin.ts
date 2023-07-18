@@ -9,8 +9,8 @@ const api =
         : `${environment.apiUrl}/api/v0/`;
 
 export const PluginEndpoints = {
-    // BPMN endpoints (path to default BPMN flow) { bpmn/flowdefinitions/{{ID}}/Start/{{VERSION}} }
-    FlowDefinition: `${api}bpmn/flowdefinitions/10/Start/1?debug=false&async=false&run=auto`,
+    // BPMN endpoints (path to default BPMN flow)
+    FlowDefinition: `${api}bpmn/flowdefinitions/tenant/catalyst/simple-flow-echo/Start.json?debug=false&async=false&run=auto`,
     // SSE demo
     eventSource: `${api}message/sse/connect`,
     eventSend:  `${api}message/sse/send`,
