@@ -1,13 +1,13 @@
 {
-    "dirty": false,
-    "raw": "",
-    "hash": "",
+    "dirty": true,
+    "raw": "1860d7d-dirty",
+    "hash": "1860d7d",
     "distance": null,
     "tag": null,
     "semver": null,
-    "suffix": "",
+    "suffix": "1860d7d-dirty",
     "semverString": null,
     "name": "server-side-ui-example",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "main": "main.js"
 }

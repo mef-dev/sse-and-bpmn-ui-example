@@ -21,4 +21,8 @@ export class PlatformConnectorService {
   get PluginData(): PluginLocalData | undefined{
     return PlatformHelper.getPluginData();
   }
+  
+  getAssetUrl(path: string): string{
+    return `${PlatformHelper.getAssetUrl()}/${path}`;
+  }
 }

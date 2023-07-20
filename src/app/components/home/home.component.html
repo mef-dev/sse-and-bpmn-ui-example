@@ -1,7 +1,12 @@
 <mefdev-central-page>
-    <mefdev-central-page-row>
-      <div class="col-auto">
-        <span class="h1">{{'Choose an option on left-side menu' | translate}}</span>
-      </div>
-    </mefdev-central-page-row>  
+  <mefdev-central-page-row>
+    <div class="col-auto">
+      <span class="h1">{{'Choose an option on left-side menu' | translate}}</span>
+    </div>
+  </mefdev-central-page-row>  
+  <mefdev-central-page-row>
+    <div class="col-6">
+      <img [src]="platformConnectorService.getAssetUrl('imgs/logo_bg.png')" style="width:100%;">
+    </div>
+  </mefdev-central-page-row>  
 </mefdev-central-page>
