@@ -1,7 +1,7 @@
 # server-side-ui-example
 ## Purpose
 Example demonstrates  BPMN-flow call and handling SSE connection from Canvas UI Angular plugin.
-To send the Server-Side-Events from backend the BPMN flow implements the following all call:
+To send the Server-Side-Events from backend the BPMN flow implements the following api call:
 ```
 curl --location 'https://api.mef.dev/api/v0/message/sse/send?lang=en' \
 --header 'accept: application/json, text/plain, */*' \
