@@ -1,0 +1,38 @@
+{
+    "name": "CAIGEN",
+    "serviceType": "UI",
+    "description": "AI-powered Cooperation for Efficient Networks",
+    "dependencies": [],
+    "config":{
+      "routesUI":[
+         {
+            "lang":"en",
+            "routerLink":"home",
+            "label":"home"
+         },
+		 {
+            "lang":"en",
+            "routerLink":"reset-state",
+            "label":"reset-state"
+         },
+		 {
+            "lang":"en",
+            "routerLink":"optimaze-network",
+            "label":"optimaze-network"
+         },
+		 {
+            "lang":"en",
+            "routerLink":"sse-demo",
+            "label":"sse-demo"
+         },
+		 {
+            "lang":"en",
+            "routerLink":"bpmn-call",
+            "label":"bpmn-call"
+         }
+      ]
+   },
+    "externalUrl": null,
+    "configuration": null
+}
+
