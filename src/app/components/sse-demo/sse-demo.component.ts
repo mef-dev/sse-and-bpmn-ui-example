@@ -1,10 +1,12 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, EventEmitter, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HeaderTextService } from 'src/app/services/header-text.service';
 import { LogService } from 'src/app/services/log.service';
 import { PlatformApiService } from 'src/app/services/platform-api.service';
 import { Record } from '../../models/log/record.model';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
+import { PlatformSseHelper } from '@natec/mef-dev-platform-connector';
 
 @Component({
   selector: 'app-sse-demo',
@@ -45,33 +47,20 @@ export class SseDemoComponent {
     )
   }
 
-  onSubscribe(){
-    this.subscribeStatus = 'inProgress';
-    this.stream = Observable.create((observer:any) => {
-      const eventSource = this.platformApiService.getSseEvent(this.serviceID);
-      eventSource.onmessage = event => {
-        this._zone.run(() => {
-          if(this.subscribeStatus != 'estabilished'){
-            this.subscribeStatus = 'estabilished';
-          }
-          observer.next(event);
-        });
-      };
-      eventSource.onerror = (error:any) => {
-        this._zone.run(() => {
-          if(this.subscribeStatus != 'disabled'){
-            this.subscribeStatus = 'disabled';
-          }
-          observer.error(error);
-        });
-      };
-    });
+  onSubscribe(){    
+    if(this.stream){
+      return;
+    }
 
-    this.records = [];
-
+    this.stream = new PlatformSseHelper(environment.apiUrl, '123', environment.bauth).SubscribeEventStream();
     this.stream.subscribe(
       x => {
         this.log.write('stream OK: ', x)
+        
+        if(this.subscribeStatus != 'estabilished'){
+          this.subscribeStatus = 'estabilished';
+        }
+
         this.records.push({
           message: 'OK',
           data: x,
@@ -80,6 +69,11 @@ export class SseDemoComponent {
       },
       err => {
         this.log.write('stream ERROR: ', err);
+
+        if(this.subscribeStatus != 'disabled'){
+          this.subscribeStatus = 'disabled';
+        }
+
         this.records.push({
           message: 'ERROR',
           data: err,

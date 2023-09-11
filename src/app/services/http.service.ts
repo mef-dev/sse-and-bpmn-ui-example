@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService implements IHttpService {
+export class HttpService
+//  implements IHttpService 
+ {
 
 	constructor(public http: HttpClient) {}
 	put(url: string, body: any, options?: { headers?: HttpHeaders | { [header: string]: string | string[]; } | undefined; context?: HttpContext | undefined; observe?: 'body' | undefined; params?: HttpParams | { [param: string]: string | number | boolean | readonly (string | number | boolean)[]; } | undefined; reportProgress?: boolean | undefined; responseType?: any; withCredentials?: boolean | undefined; } | undefined): Observable<Object> {
@@ -66,24 +68,6 @@ export class HttpService implements IHttpService {
 	): Observable<any> {
 		return this.http.post(path, body, options);
 	}
-
-	postSimple(
-		path: string, body: any | null, options?: {
-			headers?: HttpHeaders | {
-				[header: string]: string | string[];
-			};
-			context?: HttpContext;
-			observe?: 'body';
-			params?: HttpParams | {
-				[param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
-			};
-			reportProgress?: boolean;
-			responseType?: 'json';
-			withCredentials?: boolean;
-		}): Observable<any> {
-    return this.http.post(path, body, options);
-  }
-
 
 	postT<T>(
 		path: string, body: any | null, options?: {
